@@ -68,10 +68,10 @@ router.get('/home/:user/:id/:page', (req,res,next) => {
         offset: pg * pnum,
         limit: pnum,
         order: [
-            ['createdAt',DESC]
+            ['createdAt','DESC']
         ],
-        incluede: [{
-            model: db.user,
+        include: [{
+            model: db.User,
             required: true
         }]
     }).then(brds => {
